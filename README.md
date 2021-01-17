@@ -96,7 +96,7 @@ These can be arranged into data structures. Common structures:
 Coercion (changing data type) is good. Such as:
 
 - Changing character to logical
-- Matrix to dataframe
+- Matrix to dataframe, very common (`df <- as.data.frame(matrix(1:9, nrow = 3))`)
 - Double to integer (`coerced <- as.integer()`)
 
 Check type with `typeof()` or `is.vector()` etc...
