@@ -1,5 +1,7 @@
 # R introduction
 
+See video content [here](https://www.youtube.com/watch?v=_V8eKsto3Ug).
+
 Install [R](https://cran.r-project.org) and [R Studio](https://rstudio.com/products/rstudio/). Install [GitHub Desktop](https://desktop.github.com) and optionally [Visual Studio Code](https://code.visualstudio.com).
 
 ## CRAN and where to find packages, helpful links
@@ -7,6 +9,11 @@ Install [R](https://cran.r-project.org) and [R Studio](https://rstudio.com/produ
 - [CRAN](https://cran.r-project.org)
 - [Crantastic](http://crantastic.org)
 - [Trending R packages on GitHub](https://github.com/trending/r)
+
+## Common commands
+
+- `Ctrl-L` Clear console
+- `F1` after function opens its docs in the Help pane
 
 ## Common packages
 
@@ -36,6 +43,60 @@ library(pacman)  # No message.
 # function from pacman without actually loading pacman.
 # These are packages I load every time.
 pacman::p_load(pacman, dplyr, GGally, ggplot2, ggthemes, 
-  ggvis, httr, lubridate, plotly, rio, rmarkdown, shiny, 
+  ggvis, httr, lubridate, plotly, psych, rio, rmarkdown, shiny, 
   stringr, tidyr)
 ```
+
+## Histogram
+
+Make a quick plot to view the data.
+
+- `hist(iris$Petal.Length)`
+
+## Summary and describe
+
+Do graphical summaries/histograms first. Pictures first, numbers later.
+
+- `summary()`
+- `describe()` from `psych` package, for quantitative variables only
+
+## Data types and data structures
+
+Common data types:
+
+- Numeric (integer, single precision, double precision)
+- Character variables for text (no strings in R, only character)
+- Logical (true/false or boolean)
+- Complex
+- Raw
+
+These can be arranged into data structures. Common structures:
+
+- Vector
+  - (1+ numbers in a one-dimensional array, all in a line)
+  - All of the same data type
+  - R's basic data object
+- Matrix/array
+  - Has rows and columns, it's two-dimensional data
+  - Need to be the same length
+  - Need to be the same data class
+  - Columns are not named, need to be referred to be their index number
+  - Array is 3+ dimensions
+- Dataframe - optimal level of complexity for working with data structure in R
+  - Can have vectors of multiple types
+  - All need to be the same length
+  - Like a spreadsheet
+  - R has special functions for working specifically with dataframes
+- List
+  - Most flexible data format
+  - Ordered collection of elements
+  - Can have any class, length, or structure
+  - Can include lists inside
+
+Coercion (changing data type) is good. Such as:
+
+- Changing character to logical
+- Matrix to dataframe
+- Double to integer (`coerced <- as.integer()`)
+
+Check type with `typeof()` or `is.vector()` etc...
